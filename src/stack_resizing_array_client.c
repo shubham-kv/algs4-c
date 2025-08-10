@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "stack_resizing_array.h"
+
+#define BUFFER_SIZE 128
+
+/**
+ * ### Compile:
+ * `% mkdir build`
+ * `% gcc src/stack_resizing_array_client.c src/stack_resizing_array.c -o build/stack_resizing_array_client`
+ *
+ * ### Run:
+ * `% ./build/stack_resizing_array_client`
+ *
+ */
+int main() {
+  struct ResizingArrayStack _stack, *stack = &_stack;
+  Stack_Init(stack);
+
+  char inputBuffer[BUFFER_SIZE];
+
+  printf("** Stack (Resizing Array) **\n\n"
+         "Instructions:\n"
+         "1. Enter a string to push to stack\n"
+         "2. Enter '-' to pop from stack\n"
+         "3. Enter 'x' to break out of input loop\n"
+         "\nYour input:\n");
+
+  while (fscanf(stdin, "%127s", inputBuffer) != EOF) {
+    if (strncmp(inputBuffer, "x\0", 2) == 0) {
+      break;
+    }
+
+    if (strncmp(inputBuffer, "-\0", 2) == 0) {
+      if (Stack_Size(stack) > 0) {
+        char *popped = (char *) Stack_Pop(stack);
+        printf("%s\n", popped);
+        free(popped);
+      } else {
+        printf("Stack is empty\n");
+      }
+    }
+    else {
+      size_t bufLen = strlen(inputBuffer);
+      char *input = calloc(bufLen + 1, sizeof(char));
+      snprintf(input, bufLen + 1, "%s", inputBuffer);
+      Stack_Push(stack, input);
+    }
+
+    inputBuffer[0] = '\0';
+  }
+
+  printf("(%d left on stack)\n", Stack_Size(stack));
+  Stack_Clear(stack);
+
+  return 0;
+}
+
+#undef BUFFER_SIZE
+
