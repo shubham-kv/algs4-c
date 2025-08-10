@@ -2,12 +2,6 @@
 #include <memory.h>
 #include "stack_fixed_capacity.h"
 
-struct FixedCapacityStack {
-  uint32_t capacity;
-  uint32_t size;
-  Item *items;
-};
-
 #define STACK_SIZE(stack) (((Stack) stack)->size)
 #define IS_STACK_EMPTY(stack) (((Stack) stack)->size == 0)
 #define IS_STACK_FULL(stack) (((Stack) stack)->size == ((Stack) stack)->capacity)

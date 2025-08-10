@@ -3,8 +3,8 @@
 #include <string.h>
 #include "stack_fixed_capacity.h"
 
-#define STACK_CAPACITY 128
-#define BUFFER_SIZE 128
+#define STACK_CAPACITY 8
+#define BUFFER_SIZE 60
 
 /**
  * ### Compile:
@@ -16,19 +16,20 @@
  *
  */
 int main() {
-  uint8_t _stack[FIXED_CAPACITY_STACK_WIDTH];
-  Stack stack = (Stack)_stack;
+  struct FixedCapacityStack _stack, *stack = &_stack;
   Stack_Init(stack, STACK_CAPACITY);
 
   char inputBuffer[BUFFER_SIZE];
 
-  printf("Instructions:\n"
-         "1. Enter a string to push to stack\n"
-         "2. Enter '-' to pop from stack\n"
-         "3. Enter 'x' to break out of input loop\n"
-         "\nYour input:\n");
+  printf(
+    "** Stack (Fixed Capacity of %d) **\n\n"
+    "Instructions:\n"
+    "1. Enter a string to push to stack\n"
+    "2. Enter '-' to pop from stack\n"
+    "3. Enter 'x' to break out of input loop\n"
+    "\nYour input:\n", STACK_CAPACITY);
 
-  while (fscanf(stdin, "%127s", inputBuffer) != EOF) {
+  while (fscanf(stdin, "%59s", inputBuffer) != EOF) {
     if (strncmp(inputBuffer, "x\0", 2) == 0) {
       break;
     }
@@ -43,10 +44,18 @@ int main() {
       }
     }
     else {
-      size_t bufLen = strlen(inputBuffer);
-      char *input = calloc(bufLen + 1, sizeof(char));
-      snprintf(input, bufLen + 1, "%s", inputBuffer);
-      Stack_Push(stack, input);
+      if (Stack_Size(stack) < STACK_CAPACITY) {
+        size_t bufLen = strlen(inputBuffer);
+        char *input = calloc(bufLen + 1, sizeof(char));
+        snprintf(input, bufLen + 1, "%s", inputBuffer);
+        Stack_Push(stack, input);
+
+        if (Stack_Size(stack) == STACK_CAPACITY) {
+          printf("Stack is full\n");
+        }
+      } else {
+        printf("Stack is full\n");
+      }
     }
     inputBuffer[0] = '\0';
   }
