@@ -16,3 +16,4 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 
 - [Stack (Fixed Capacity)](./src/stack_fixed_capacity.c)
 - [Stack (Resizing Array)](./src/stack_resizing_array.c)
+- [Stack (Linked List)](./src/stack_linked_list.c)
