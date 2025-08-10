@@ -7,6 +7,7 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 - [Index](#index)
   - [1. Fundamentals](#1-fundamentals)
     - [1.3 Bags, Queues \& Stacks](#13-bags-queues--stacks)
+- [Feedback / Contributions](#feedback--contributions)
 
 ## Index
 
@@ -17,3 +18,9 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 - [Stack (Fixed Capacity)](./src/stack_fixed_capacity.c)
 - [Stack (Resizing Array)](./src/stack_resizing_array.c)
 - [Stack (Linked List)](./src/stack_linked_list.c)
+
+## Feedback / Contributions
+
+I'm open to feedback, improvements or contributions, feel free to reach out.
+
+Cheers!
