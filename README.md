@@ -19,6 +19,7 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 1. [Stack (Resizing Array)](./src/stack_resizing_array.c)
 1. [Stack (Linked List)](./src/stack_linked_list.c)
 1. [Queue (Linked List)](./src/queue_linked_list.c)
+1. [Bag (Linked List)](./src/bag_linked.c)
 
 ## Feedback / Contributions
 
