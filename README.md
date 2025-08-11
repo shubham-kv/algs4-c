@@ -25,6 +25,7 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 #### 1.5 Union find
 
 1. [Quick Find](./src/quick_find.c)
+1. [Quick Union](./src/quick_union.c)
 
 ## Feedback / Contributions
 
