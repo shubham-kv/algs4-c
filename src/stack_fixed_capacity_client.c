@@ -57,10 +57,25 @@ int main() {
         printf("Stack is full\n");
       }
     }
-    inputBuffer[0] = '\0';
   }
 
+  printf("\n");
+  printf("peek() = %s\n", (char *) Stack_Peek(stack));
   printf("(%d left on stack)\n", Stack_Size(stack));
+
+  struct FCStackIterator _iterator, *iterator = &_iterator;
+  StackIterator_Init(iterator, stack);
+
+  while (StackIterator_HasNext(iterator)) {
+    char *input = (char *) StackIterator_GetNext(iterator);
+    printf("%s\n", input);
+  }
+  printf("\n");
+
+  while (!Stack_IsEmpty(stack)) {
+    free((char *) Stack_Pop(stack));
+  }
+  StackIterator_Clear(iterator);
   Stack_Clear(stack);
 
   return 0;
