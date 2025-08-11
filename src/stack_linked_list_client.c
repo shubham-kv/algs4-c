@@ -47,12 +47,26 @@ int main() {
       snprintf(input, bufLen + 1, "%s", inputBuffer);
       Stack_Push(stack, input);
     }
-
-    inputBuffer[0] = '\0';
   }
 
+  printf("\n");
+  printf("peek() = %s\n", (char *) Stack_Peek(stack));
   printf("(%d left on stack)\n", Stack_Size(stack));
-  Stack_Clear(stack);
+
+  struct LLStackIterator _iterator, *iterator = &_iterator;
+  StackIterator_Init(iterator, stack);
+
+  while (StackIterator_HasNext(iterator)) {
+    char *input = (char *) StackIterator_GetNext(iterator);
+    printf("%s\n", input);
+  }
+
+  StackIterator_Clear(iterator), (iterator = NULL);
+
+  while (!Stack_IsEmpty(stack)) {
+    free((char *) Stack_Pop(stack));
+  }
+  Stack_Clear(stack), (stack = NULL);
 
   return 0;
 }

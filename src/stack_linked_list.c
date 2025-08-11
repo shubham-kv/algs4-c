@@ -1,11 +1,18 @@
 #include <stdlib.h>
+#include <memory.h>
 #include "stack_linked_list.h"
 
+struct StackNode {
+  struct StackNode *next;
+  Item data;
+};
 typedef struct StackNode *Node;
 
-void Stack_Init(Stack stack) {
-  stack->top = NULL;
-  stack->size = 0;
+#define STACK_SIZE(stack) (((Stack) stack)->size)
+#define IS_STACK_EMPTY(stack) (STACK_SIZE(stack) == 0)
+
+inline void Stack_Init(Stack stack) {
+  stack->top = NULL, stack->size = 0;
 }
 
 void Stack_Clear(Stack stack) {
@@ -36,6 +43,10 @@ Item Stack_Pop(Stack stack) {
   return item;
 }
 
+inline Item Stack_Peek(Stack stack) {
+  return IS_STACK_EMPTY(stack) ? NULL : stack->top->data;
+}
+
 inline int Stack_Size(Stack stack) {
   return STACK_SIZE(stack);
 }
@@ -43,4 +54,31 @@ inline int Stack_Size(Stack stack) {
 inline bool Stack_IsEmpty(Stack stack) {
   return IS_STACK_EMPTY(stack);
 }
+
+
+inline void StackIterator_Init(StackIterator iterator, Stack stack) {
+  iterator->stack = stack, iterator->cur = iterator->stack->top;
+}
+
+inline void StackIterator_Clear(StackIterator iterator) {
+  memset(iterator, 0, sizeof(struct LLStackIterator));
+}
+
+inline bool StackIterator_HasNext(StackIterator iterator) {
+  return iterator->cur != NULL;
+}
+
+Item StackIterator_GetNext(StackIterator iterator) {
+  if (!StackIterator_HasNext(iterator)) {
+    return NULL;
+  }
+
+  Item item = iterator->cur->data;
+  iterator->cur = iterator->cur->next;
+
+  return item;
+}
+
+#undef STACK_SIZE
+#undef IS_STACK_EMPTY
 
