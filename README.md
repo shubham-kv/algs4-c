@@ -7,6 +7,7 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 - [Index](#index)
   - [1. Fundamentals](#1-fundamentals)
     - [1.3 Bags, Queues \& Stacks](#13-bags-queues--stacks)
+    - [1.5 Union find](#15-union-find)
 - [Feedback / Contributions](#feedback--contributions)
 
 ## Index
@@ -20,6 +21,10 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 1. [Stack (Linked List)](./src/stack_linked_list.c)
 1. [Queue (Linked List)](./src/queue_linked_list.c)
 1. [Bag (Linked List)](./src/bag_linked.c)
+
+#### 1.5 Union find
+
+1. [Quick Find](./src/quick_find.c)
 
 ## Feedback / Contributions
 
