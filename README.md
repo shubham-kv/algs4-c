@@ -39,6 +39,7 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 
 ## Feedback / Contributions
 
-I'm open to feedback, improvements or contributions, feel free to reach out.
+I'm open to feedback, improvements or contributions, feel free to raise an issue
+or a PR.
 
 Cheers!
