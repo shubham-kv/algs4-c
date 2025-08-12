@@ -33,6 +33,7 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 
 1. [Selection Sort](./src/sort_selection.c)
 1. [Insertion Sort](./src/sort_insertion.c)
+1. [Shell Sort](./src/sort_shell.c)
 
 ## Feedback / Contributions
 
