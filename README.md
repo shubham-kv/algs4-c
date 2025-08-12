@@ -8,6 +8,7 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
   - [1. Fundamentals](#1-fundamentals)
     - [1.3 Bags, Queues \& Stacks](#13-bags-queues--stacks)
     - [1.5 Union find](#15-union-find)
+  - [2. Sorting](#2-sorting)
 - [Feedback / Contributions](#feedback--contributions)
 
 ## Index
@@ -27,6 +28,10 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 1. [Quick Find](./src/quick_find.c)
 1. [Quick Union](./src/quick_union.c)
 1. [Weighted Quick Union](./src/quick_union_weighted.c)
+
+### 2. Sorting
+
+1. [Selection Sort](./src/sort_selection.c)
 
 ## Feedback / Contributions
 
