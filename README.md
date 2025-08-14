@@ -37,6 +37,7 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 1. [Merge Sort (Top Down)](./src/sort_merge_top_down.c)
 1. [Merge Sort (Bottom Up)](./src/sort_merge_bottom_up.c)
 1. [Quick Sort](./src/sort_quick.c)
+1. [Heap Sort](./src/sort_heap.c)
 
 ## Feedback / Contributions
 
