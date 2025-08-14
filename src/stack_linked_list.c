@@ -8,15 +8,12 @@ struct StackNode {
 };
 typedef struct StackNode *Node;
 
-#define STACK_SIZE(stack) (((Stack) stack)->size)
-#define IS_STACK_EMPTY(stack) (STACK_SIZE(stack) == 0)
-
 inline void Stack_Init(Stack stack) {
   stack->top = NULL, stack->size = 0;
 }
 
 void Stack_Clear(Stack stack) {
-  while (!IS_STACK_EMPTY(stack)) {
+  while (!Stack_IsEmpty(stack)) {
     Stack_Pop(stack);
   }
 }
@@ -30,7 +27,7 @@ void Stack_Push(Stack stack, Item item) {
 }
 
 Item Stack_Pop(Stack stack) {
-  if (IS_STACK_EMPTY(stack)) {
+  if (Stack_IsEmpty(stack)) {
     return NULL;
   }
 
@@ -44,15 +41,15 @@ Item Stack_Pop(Stack stack) {
 }
 
 inline Item Stack_Peek(Stack stack) {
-  return IS_STACK_EMPTY(stack) ? NULL : stack->top->data;
+  return Stack_IsEmpty(stack) ? NULL : stack->top->data;
 }
 
 inline int Stack_Size(Stack stack) {
-  return STACK_SIZE(stack);
+  return stack->size;
 }
 
 inline bool Stack_IsEmpty(Stack stack) {
-  return IS_STACK_EMPTY(stack);
+  return Stack_Size(stack) == 0;
 }
 
 
@@ -78,7 +75,4 @@ Item StackIterator_GetNext(StackIterator iterator) {
 
   return item;
 }
-
-#undef STACK_SIZE
-#undef IS_STACK_EMPTY
 
