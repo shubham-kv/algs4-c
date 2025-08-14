@@ -20,12 +20,8 @@ int main() {
 
   char inputBuffer[BUFFER_SIZE];
 
-  printf("** Stack (Resizing Array) **\n\n"
-         "Instructions:\n"
-         "1. Enter a string to push to stack\n"
-         "2. Enter '-' to pop from stack\n"
-         "3. Enter 'x' to break out of input loop\n"
-         "\nYour input:\n");
+  printf("** Stack (Resizing Array) **\n");
+  printf("\n");
 
   while (fscanf(stdin, "%127s", inputBuffer) != EOF) {
     if (strncmp(inputBuffer, "x\0", 2) == 0) {
@@ -35,7 +31,7 @@ int main() {
     if (strncmp(inputBuffer, "-\0", 2) == 0) {
       if (Stack_Size(stack) > 0) {
         char *popped = (char *) Stack_Pop(stack);
-        printf("%s\n", popped);
+        printf("pop() = %s\n", popped);
         free(popped);
       } else {
         printf("Stack is empty\n");
@@ -46,19 +42,20 @@ int main() {
       char *input = calloc(bufLen + 1, sizeof(char));
       snprintf(input, bufLen + 1, "%s", inputBuffer);
       Stack_Push(stack, input);
+      printf("push(%s)\n", input);
     }
   }
 
   printf("\n");
   printf("peek() = %s\n", (char *) Stack_Peek(stack));
-  printf("(%d left on stack)\n", Stack_Size(stack));
+  printf("size() = %d\n", Stack_Size(stack));
 
   struct RAStackIterator _iterator, *iterator = &_iterator;
   StackIterator_Init(iterator, stack);
 
   while (StackIterator_HasNext(iterator)) {
     char *popped = (char *) StackIterator_GetNext(iterator);
-    printf("%s\n", popped);
+    printf("iterator_next() = %s\n", popped);
   }
   printf("\n");
 

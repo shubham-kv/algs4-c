@@ -3,9 +3,6 @@
 #include "stack_resizing_array.h"
 
 #define INITIAL_CAPACITY 8
-#define STACK_SIZE(stack) (((Stack) stack)->size)
-#define IS_STACK_EMPTY(stack) (STACK_SIZE(stack) == 0)
-#define IS_STACK_FULL(stack) (STACK_SIZE(stack) == ((Stack) stack)->capacity)
 
 void Stack_Init(Stack stack) {
   stack->capacity = INITIAL_CAPACITY;
@@ -24,18 +21,18 @@ static void resize(Stack stack, uint32_t newCapacity) {
 }
 
 void Stack_Push(Stack stack, Item item) {
-  if (IS_STACK_FULL(stack)) {
+  if (stack->size < stack->capacity) {
     resize(stack, stack->capacity * 2);
   }
   stack->items[stack->size++] = item;
 }
 
 Item Stack_Peek(Stack stack) {
-  return IS_STACK_EMPTY(stack) ? NULL : stack->items[stack->size - 1];
+  return Stack_IsEmpty(stack) ? NULL : stack->items[stack->size - 1];
 }
 
 Item Stack_Pop(Stack stack) {
-  if (IS_STACK_EMPTY(stack)) {
+  if (Stack_IsEmpty(stack)) {
     return NULL;
   }
 
@@ -50,11 +47,11 @@ Item Stack_Pop(Stack stack) {
 }
 
 inline int Stack_Size(Stack stack) {
-  return STACK_SIZE(stack);
+  return stack->size;
 }
 
 inline bool Stack_IsEmpty(Stack stack) {
-  return IS_STACK_EMPTY(stack);
+  return Stack_Size(stack) == 0;
 }
 
 
@@ -77,7 +74,4 @@ inline Item StackIterator_GetNext(StackIterator iterator) {
 }
 
 #undef INITIAL_CAPACITY
-#undef STACK_SIZE
-#undef IS_STACK_EMPTY
-#undef IS_STACK_FULL
 
