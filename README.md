@@ -9,6 +9,10 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
     - [1.3 Bags, Queues \& Stacks](#13-bags-queues--stacks)
     - [1.5 Union find](#15-union-find)
   - [2. Sorting](#2-sorting)
+    - [2.1 Elementary Sorts](#21-elementary-sorts)
+    - [2.2 Mergesort](#22-mergesort)
+    - [2.3 Quicksort](#23-quicksort)
+    - [2.4 Priority Queues](#24-priority-queues)
 - [Feedback / Contributions](#feedback--contributions)
 
 ## Index
@@ -31,13 +35,24 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 
 ### 2. Sorting
 
-1. [Selection Sort](./src/sort_selection.c)
-1. [Insertion Sort](./src/sort_insertion.c)
-1. [Shell Sort](./src/sort_shell.c)
-1. [Merge Sort (Top Down)](./src/sort_merge_top_down.c)
-1. [Merge Sort (Bottom Up)](./src/sort_merge_bottom_up.c)
-1. [Quick Sort](./src/sort_quick.c)
-1. [Heap Sort](./src/sort_heap.c)
+#### 2.1 Elementary Sorts
+
+1. [Selection sort](./src/sort_selection.c)
+1. [Insertion sort](./src/sort_insertion.c)
+1. [Shell sort](./src/sort_shell.c)
+
+#### 2.2 Mergesort
+
+1. [Mergesort (Top Down)](./src/sort_merge_top_down.c)
+1. [Mergesort Sort (Bottom Up)](./src/sort_merge_bottom_up.c)
+
+#### 2.3 Quicksort
+
+1. [Quicksort](./src/sort_quick.c)
+
+#### 2.4 Priority Queues
+
+1. [Heapsort](./src/sort_heap.c)
 
 ## Feedback / Contributions
 
