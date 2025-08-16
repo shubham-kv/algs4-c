@@ -52,6 +52,7 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 
 #### 2.4 Priority Queues
 
+1. [Max PQ (Unordered array)](./src/pq_max_array_unordered.c)
 1. [Heapsort](./src/sort_heap.c)
 
 ## Feedback / Contributions
