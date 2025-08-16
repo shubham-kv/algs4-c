@@ -5,10 +5,10 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 
 - [Table of Contents](#table-of-contents)
 - [Index](#index)
-  - [1. Fundamentals](#1-fundamentals)
+  - [Ch. 1. Fundamentals](#ch-1-fundamentals)
     - [1.3 Bags, Queues \& Stacks](#13-bags-queues--stacks)
     - [1.5 Union find](#15-union-find)
-  - [2. Sorting](#2-sorting)
+  - [Ch. 2. Sorting](#ch-2-sorting)
     - [2.1 Elementary Sorts](#21-elementary-sorts)
     - [2.2 Mergesort](#22-mergesort)
     - [2.3 Quicksort](#23-quicksort)
@@ -17,7 +17,7 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 
 ## Index
 
-### 1. Fundamentals
+### Ch. 1. Fundamentals
 
 #### 1.3 Bags, Queues & Stacks
 
@@ -33,7 +33,7 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 1. [Quick Union](./src/quick_union.c)
 1. [Weighted Quick Union](./src/quick_union_weighted.c)
 
-### 2. Sorting
+### Ch. 2. Sorting
 
 #### 2.1 Elementary Sorts
 
@@ -53,6 +53,7 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 #### 2.4 Priority Queues
 
 1. [Max PQ (Unordered array)](./src/pq_max_array_unordered.c)
+1. [Max PQ (Ordered array)](./src/pq_max_array_ordered.c)
 1. [Heapsort](./src/sort_heap.c)
 
 ## Feedback / Contributions
