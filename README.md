@@ -13,6 +13,8 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
     - [2.2 Mergesort](#22-mergesort)
     - [2.3 Quicksort](#23-quicksort)
     - [2.4 Priority Queues](#24-priority-queues)
+  - [Ch. 4. Graphs](#ch-4-graphs)
+    - [4.1 Undirected Graphs](#41-undirected-graphs)
 - [Feedback / Contributions](#feedback--contributions)
 
 ## Index
@@ -56,6 +58,13 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 1. [Max PQ (Ordered array)](./src/pq_max_array_ordered.c)
 1. [Max PQ (Heap)](./src/pq_max_heap.c)
 1. [Heapsort](./src/sort_heap.c)
+
+### Ch. 4. Graphs
+
+#### 4.1 Undirected Graphs
+
+1. [Graph (Adjacency Lists)](./src/graph.c)
+1. [Depth First Search](./src/graph_search_dfs.c)
 
 ## Feedback / Contributions
 
