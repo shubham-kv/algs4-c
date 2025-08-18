@@ -57,7 +57,7 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 1. [Max PQ (Unordered array)](./src/pq_max_array_unordered.c)
 1. [Max PQ (Ordered array)](./src/pq_max_array_ordered.c)
 1. [Max PQ (Heap)](./src/pq_max_heap.c)
-1. [Heapsort](./src/sort_heap.c)
+1. [Heapsort](./lib/sorting/sort_heap/sort_heap.c)
 
 ### Ch. 4. Graphs
 

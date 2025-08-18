@@ -16,3 +16,6 @@ target_link_libraries(sort_merge_bottom_up_client PRIVATE sort_merge_bottom_up)
 add_executable(sort_quick_client sort_quick_client.c)
 target_link_libraries(sort_quick_client PRIVATE sort_quick)
 
+add_executable(sort_heap_client sort_heap_client.c)
+target_link_libraries(sort_heap_client PRIVATE sort_heap)
+
