@@ -3,14 +3,13 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <time.h>
+
 #include "sort_quick.h"
 #include "sort_insertion.h"
 #include "std_random.h"
+#include "arr_utils.h"
 
 #define CUT_OFF 5
-
-static void swap(void *arr, size_t width, int i, int j);
-static bool isSorted(void *arr, size_t width, size_t n, ComparatorFn cmp);
 
 int partition(
     void *arr,
@@ -38,10 +37,10 @@ int partition(
       break;
     }
 
-    swap(arr, width, i, j);
+    ArrUtils_Swap(arr, width, i, j);
   }
 
-  swap(arr, width, p, j);
+  ArrUtils_Swap(arr, width, p, j);
   return j;
 }
 
@@ -73,24 +72,7 @@ void quickSort(void *arr, size_t width, int n, ComparatorFn cmp) {
   StdRandom_shuffle(arr, width, n);
   quickSortRecursive(arr, width, 0, n - 1, cmp);
 
-  assert(isSorted(arr, width, n, cmp) == true);
-}
-
-
-static void swap(void *arr, size_t width, int i, int j) {
-  char temp[width];
-  memcpy(temp, arr + i * width, width);
-  memcpy(arr + i * width, arr + j * width, width);
-  memcpy(arr + j * width, temp, width);
-}
-
-static bool isSorted(void *arr, size_t width, size_t n, ComparatorFn cmp) {
-  for (size_t i = 1; i < n; i++) {
-    if (cmp(arr + (i - 1) * width, arr + i * width) > 0) {
-      return false;
-    }
-  }
-  return true;
+  assert(ArrUtils_IsSorted(arr, width, n, cmp) == true);
 }
 
 #undef CUT_OFF

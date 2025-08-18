@@ -1,4 +1,5 @@
 add_library(sort_merge_top_down SHARED sort_merge_top_down.c)
 target_include_directories(sort_merge_top_down PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(sort_merge_top_down PRIVATE sort_insertion)
+target_link_libraries(sort_merge_top_down PRIVATE arr_utils)
 

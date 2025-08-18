@@ -2,12 +2,12 @@
 #include <memory.h>
 #include <stdbool.h>
 #include <stdlib.h>
+
 #include "sort_merge_top_down.h"
 #include "sort_insertion.h"
+#include "arr_utils.h"
 
 #define CUT_OFF 6
-
-static bool isSorted(void *arr, size_t width, size_t n, ComparatorFn cmp);
 
 void merge(
     void *arr,
@@ -69,17 +69,7 @@ void topDownMergeSort(void *arr, size_t width, int n, ComparatorFn cmp) {
   topDownMergeSortRecursive(arr, aux, width, 0, n - 1, cmp);
   free(aux), (aux = NULL);
 
-  assert(isSorted(arr, width, n, cmp) == true);
-}
-
-
-static bool isSorted(void *arr, size_t width, size_t n, ComparatorFn cmp) {
-  for (size_t i = 1; i < n; i++) {
-    if (cmp(arr + (i - 1) * width, arr + i * width) > 0) {
-      return false;
-    }
-  }
-  return true;
+  assert(ArrUtils_IsSorted(arr, width, n, cmp) == true);
 }
 
 #undef CUT_OFF

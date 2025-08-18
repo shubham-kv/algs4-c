@@ -7,4 +7,5 @@ foreach(dir ${CHILD_DIRS})
 endforeach()
 
 add_library(std_random SHARED std_random.c)
-target_include_directories(std_random PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+add_library(arr_utils SHARED arr_utils.c)
+

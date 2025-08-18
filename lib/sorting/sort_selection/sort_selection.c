@@ -3,9 +3,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include "sort_selection.h"
-
-static void swap(void *arr, size_t width, size_t i, size_t j);
-static bool isSorted(void *arr, size_t width, size_t n, ComparatorFn cmp);
+#include "arr_utils.h"
 
 void selectionSort(void *arr, size_t width, size_t n, ComparatorFn cmp) {
   for (size_t i = 0; i < n; i++) {
@@ -20,26 +18,9 @@ void selectionSort(void *arr, size_t width, size_t n, ComparatorFn cmp) {
     if (minIndex == i) {
       continue;
     }
-
-    swap(arr, width, i, minIndex);
+    ArrUtils_Swap(arr, width, i, minIndex);
   }
 
-  assert(isSorted(arr, width, n, cmp) == true);
-}
-
-static void swap(void *arr, size_t width, size_t i, size_t j) {
-  char temp[width];
-  memcpy(temp, arr + i * width, width);
-  memcpy(arr + i * width, arr + j * width, width);
-  memcpy(arr + j * width, temp, width);
-}
-
-static bool isSorted(void *arr, size_t width, size_t n, ComparatorFn cmp) {
-  for (size_t i = 1; i < n; i++) {
-    if (cmp(arr + (i - 1) * width, arr + i * width) > 0) {
-      return false;
-    }
-  }
-  return true;
+  assert(ArrUtils_IsSorted(arr, width, n, cmp) == true);
 }
 
