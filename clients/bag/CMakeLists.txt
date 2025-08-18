@@ -1,3 +1,6 @@
 add_executable(bag_linked_client bag_linked_client.c)
 target_link_libraries(bag_linked_client PRIVATE bag_linked)
 
+add_executable(bag_linked_int_client bag_linked_int_client.c)
+target_link_libraries(bag_linked_int_client PRIVATE bag_linked_int)
+

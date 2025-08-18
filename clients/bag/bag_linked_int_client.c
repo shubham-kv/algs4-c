@@ -5,16 +5,12 @@
 
 /**
  * ### Compile
- * % mkdir build
- * % gcc -Wall -g src/bag_linked_int_client.c \
- *     src/bag_linked_int.c \
- *     -o build/bag_linked_int_client.out
+ * % cmake -S . -B build
+ * % make -C build
  *
  * ### Run
- *
- * % more input.txt
- *   10 20 30 40 50 55 68 90
- * % build/bag_linked_int_client.out < input.txt
+ * % echo "1 2 3 4 5 x" > input.txt
+ * % ./build/bin/bag_linked_int_client < input.txt
  *
  */
 int main() {
