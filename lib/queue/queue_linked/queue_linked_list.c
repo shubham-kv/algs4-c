@@ -8,10 +8,6 @@ struct QueueNode {
 };
 typedef struct QueueNode *Node;
 
-#define SIZEOF_QUEUE (sizeof(struct LinkedListQueue))
-#define SIZEOF_QUEUE_NODE (sizeof(struct QueueNode))
-#define SIZEOF_QUEUE_ITERATOR (sizeof(struct LLQueueIterator))
-
 inline void Queue_Init(Queue queue) {
   (queue->first = (queue->last = NULL)), (queue->size = 0);
 }
@@ -20,11 +16,11 @@ void Queue_Clear(Queue queue) {
   while (!Queue_IsEmpty(queue)) {
     Queue_Dequeue(queue);
   }
-  memset(queue, 0, SIZEOF_QUEUE);
+  memset(queue, 0, sizeof(struct LinkedListQueue));
 }
 
 void Queue_Enqueue(Queue queue, Item item) {
-  Node node = calloc(1, SIZEOF_QUEUE_NODE);
+  Node node = calloc(1, sizeof(struct QueueNode));
   node->data = item;
 
   if (queue->last) {
@@ -75,7 +71,7 @@ inline void QueueIterator_Init(QueueIterator iterator, Queue queue) {
 }
 
 inline void QueueIterator_Clear(QueueIterator iterator) {
-  memset(iterator, 0, SIZEOF_QUEUE_ITERATOR);
+  memset(iterator, 0, sizeof(struct LLQueueIterator));
 }
 
 inline bool QueueIterator_HasNext(QueueIterator iterator) {
@@ -92,8 +88,4 @@ Item QueueIterator_GetNext(QueueIterator iterator) {
 
   return firstItem;
 }
-
-#undef SIZEOF_QUEUE
-#undef SIZEOF_QUEUE_NODE
-#undef SIZEOF_QUEUE_ITERATOR
 

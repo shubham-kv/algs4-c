@@ -7,14 +7,12 @@
 
 /**
  * ### Compile
- * `% mkdir build`
- * `% gcc src/queue_linked_list_client.c src/queue_linked_list.c -o build/queue_linked_list_client.out`
+ * % cmake -S . -B build
+ * % make -C build
  *
- * ### Run
- *
- * `% more input.txt`
- * `I II III IV - V -`
- * `% build/queue_linked_list_client.out < input.txt`
+ * ### Run:
+ * % echo "I II III IV V - - x" > input.txt
+ * % ./build/bin/queue_linked_list_client < input.txt
  *
  */
 int main() {
