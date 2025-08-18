@@ -1,0 +1,3 @@
+add_executable(sort_selection_client sort_selection_client.c)
+target_link_libraries(sort_selection_client PRIVATE sort_selection)
+

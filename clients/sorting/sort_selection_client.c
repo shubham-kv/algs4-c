@@ -8,12 +8,12 @@ int charCmp(const void *a, const void *b);
 void printChars(char *str, size_t n);
 
 /**
- * ### Compile:
- * `% mkdir build`
- * `% gcc src/sort_selection_client.c src/sort_selection.c -o build/sort_selection_client.out`
+ * ### Compile
+ * % cmake -S . -B build
+ * % make -C build
  *
- * ### Run:
- * `% build/sort_selection_client.out`
+ * ### Run
+ * % ./build/bin/sort_selection_client
  *
  */
 int main() {
