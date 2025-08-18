@@ -7,14 +7,12 @@
 
 /**
  * ### Compile
- * `% mkdir build`
- * `% gcc src/bag_linked_client.c src/bag_linked.c -o build/bag_linked_client.out`
+ * % cmake -S . -B build
+ * % make -C build
  *
  * ### Run
- *
- * `% more input.txt`
- * `I II III IV V`
- * `% build/bag_linked_client.out < input.txt`
+ * % echo "I II III IV V x" > input.txt
+ * % ./build/bin/bag_linked_client < input.txt
  *
  */
 int main() {
