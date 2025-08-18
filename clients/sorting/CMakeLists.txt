@@ -4,3 +4,6 @@ target_link_libraries(sort_selection_client PRIVATE sort_selection)
 add_executable(sort_insertion_client sort_insertion_client.c)
 target_link_libraries(sort_insertion_client PRIVATE sort_insertion)
 
+add_executable(sort_shell_client sort_shell_client.c)
+target_link_libraries(sort_shell_client PRIVATE sort_shell)
+

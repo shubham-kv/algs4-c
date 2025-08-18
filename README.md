@@ -41,7 +41,7 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 
 1. [Selection sort](./lib/sorting/sort_selection/sort_selection.c)
 1. [Insertion sort](./lib/sorting/sort_insertion/sort_insertion.c)
-1. [Shell sort](./src/sort_shell.c)
+1. [Shell sort](./lib/sorting/sort_shell/sort_shell.c)
 
 #### 2.2 Mergesort
 
