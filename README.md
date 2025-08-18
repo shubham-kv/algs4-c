@@ -45,7 +45,7 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 
 #### 2.2 Mergesort
 
-1. [Mergesort (Top Down)](./src/sort_merge_top_down.c)
+1. [Mergesort (Top Down)](./lib/sorting/sort_merge_top_down/sort_merge_top_down.c)
 1. [Mergesort Sort (Bottom Up)](./src/sort_merge_bottom_up.c)
 
 #### 2.3 Quicksort

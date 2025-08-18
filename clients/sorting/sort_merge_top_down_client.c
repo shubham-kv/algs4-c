@@ -8,12 +8,12 @@ int charCmp(const void *a, const void *b);
 void printChars(char *str, size_t n);
 
 /**
- * ### Compile:
- * % mkdir build
- * % gcc -Wall -g src/sort_merge_top_down_client.c src/sort_merge_top_down.c src/sort_insertion.c -o build/sort_merge_top_down_client.out
+ * ### Compile
+ * % cmake -S . -B build
+ * % make -C build
  *
- * ### Run:
- * `% build/sort_merge_top_down_client.out`
+ * ### Run
+ * % ./build/bin/sort_merge_top_down_client
  *
  */
 int main() {
