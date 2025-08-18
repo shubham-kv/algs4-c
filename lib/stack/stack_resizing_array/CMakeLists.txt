@@ -1,0 +1,3 @@
+add_library(stack_resizing_array SHARED stack_resizing_array.c)
+target_include_directories(stack_resizing_array PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+

@@ -6,12 +6,13 @@
 #define BUFFER_SIZE 128
 
 /**
- * ### Compile:
- * `% mkdir build`
- * `% gcc src/stack_resizing_array_client.c src/stack_resizing_array.c -o build/stack_resizing_array_client`
+ * ### Compile
+ * % cmake -S . -B build
+ * % make -C build
  *
  * ### Run:
- * `% ./build/stack_resizing_array_client`
+ * % echo "I II III IV V - - x" > input.txt
+ * % ./build/bin/stack_resizing_array_client < input.txt
  *
  */
 int main() {
