@@ -7,12 +7,13 @@
 #define BUFFER_SIZE 60
 
 /**
- * ### Compile:
- * `% mkdir build`
- * `% gcc src/stack_fixed_capacity_client.c src/stack_fixed_capacity.c -o build/stack_fixed_capacity_client`
+ * ### Compile
+ * % cmake -S . -B build
+ * % make -C build
  *
  * ### Run:
- * `% ./build/stack_fixed_capacity_client`
+ * % echo "I II III IV V - - x" > input.txt
+ * % ./build/bin/stack_fixed_capacity_client < input.txt
  *
  */
 int main() {

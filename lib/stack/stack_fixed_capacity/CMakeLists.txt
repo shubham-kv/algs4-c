@@ -1,0 +1,3 @@
+add_library(stack_fixed_capacity SHARED stack_fixed_capacity.c)
+target_include_directories(stack_fixed_capacity PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+

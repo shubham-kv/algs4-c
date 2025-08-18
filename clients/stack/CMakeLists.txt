@@ -1,0 +1,2 @@
+add_executable(stack_fixed_capacity_client stack_fixed_capacity_client.c)
+target_link_libraries(stack_fixed_capacity_client PRIVATE stack_fixed_capacity)

@@ -23,7 +23,7 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 
 #### 1.3 Bags, Queues & Stacks
 
-1. [Stack (Fixed Capacity)](./src/stack_fixed_capacity.c)
+1. [Stack (Fixed Capacity)](./lib/stack/stack_fixed_capacity/stack_fixed_capacity.c)
 1. [Stack (Resizing Array)](./src/stack_resizing_array.c)
 1. [Stack (Linked List)](./src/stack_linked_list.c)
 1. [Queue (Linked List)](./src/queue_linked_list.c)
