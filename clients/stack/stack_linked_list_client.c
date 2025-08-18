@@ -7,11 +7,12 @@
 
 /**
  * ### Compile:
- * `% mkdir build`
- * `% gcc src/stack_linked_list_client.c src/stack_linked_list.c -o build/stack_linked_list_client.out`
+ * % cmake -S . -B build
+ * % make -C build
  *
  * ### Run:
- * `% ./build/stack_linked_list_client.out`
+ * % echo "I II III IV V - - x" > input.txt
+ * % ./build/bin/stack_linked_list_client < input.txt
  *
  */
 int main() {
