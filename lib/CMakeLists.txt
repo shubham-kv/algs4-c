@@ -6,3 +6,5 @@ foreach(dir ${CHILD_DIRS})
   endif()
 endforeach()
 
+add_library(std_random SHARED std_random.c)
+target_include_directories(std_random PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

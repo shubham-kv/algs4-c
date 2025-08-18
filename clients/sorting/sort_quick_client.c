@@ -8,14 +8,12 @@ int charCmp(const void *a, const void *b);
 void printChars(char *str, size_t n);
 
 /**
- * ### Compile:
- * % mkdir build
- * % gcc -Wall -g src/sort_quick_client.c src/sort_quick.c \
- *     src/std_random.c src/sort_insertion.c \
- *     -o build/sort_quick_client.out
+ * ### Compile
+ * % cmake -S . -B build
+ * % make -C build
  *
- * ### Run:
- * `% build/sort_quick_client.out`
+ * ### Run
+ * % ./build/bin/sort_quick_client
  *
  */
 int main() {

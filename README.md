@@ -50,7 +50,7 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 
 #### 2.3 Quicksort
 
-1. [Quicksort](./src/sort_quick.c)
+1. [Quicksort](./lib/sorting/sort_quick/sort_quick.c)
 
 #### 2.4 Priority Queues
 
