@@ -4,14 +4,17 @@
 
 /**
  * ### Compile
- * `% mkdir build`
- * `% gcc src/quick_union_client.c src/quick_union.c -o build/quick_union_client.out`
+ * % cmake -S . -B build
+ * % make -C build
  *
  * ### Run
- * `% build/quick_union_client.out < tinyUF.txt`
+ * % ./build/bin/quick_union_client < tinyUF.txt
  *
  */
 int main() {
+  printf("** Quick Union **\n");
+  printf("\n");
+
   int n = 0;
   fscanf(stdin, "%d", &n);
 
@@ -31,6 +34,8 @@ int main() {
 
   int count = QuickUnion_Count(uf);
   printf("count(): %d\n", count);
+  printf("\n");
+
   QuickUnion_Clear(uf);
 
   return 0;

@@ -1,3 +1,6 @@
 add_executable(quick_find_client quick_find_client.c)
 target_link_libraries(quick_find_client PRIVATE quick_find)
 
+add_executable(quick_union_client quick_union_client.c)
+target_link_libraries(quick_union_client PRIVATE quick_union)
+

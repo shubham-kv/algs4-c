@@ -8,7 +8,7 @@
  * % make -C build
  *
  * ### Run
- * % ./build/bin/stack_fixed_capacity_client < tinyUF.txt
+ * % ./build/bin/quick_find_client < tinyUF.txt
  *
  */
 int main() {
