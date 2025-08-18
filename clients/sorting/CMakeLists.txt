@@ -10,3 +10,6 @@ target_link_libraries(sort_shell_client PRIVATE sort_shell)
 add_executable(sort_merge_top_down_client sort_merge_top_down_client.c)
 target_link_libraries(sort_merge_top_down_client PRIVATE sort_merge_top_down)
 
+add_executable(sort_merge_bottom_up_client sort_merge_bottom_up_client.c)
+target_link_libraries(sort_merge_bottom_up_client PRIVATE sort_merge_bottom_up)
+

@@ -1,0 +1,3 @@
+add_library(sort_merge_bottom_up SHARED sort_merge_bottom_up.c)
+target_include_directories(sort_merge_bottom_up PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
