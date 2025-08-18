@@ -33,7 +33,7 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 
 1. [Quick Find](./lib/union_find/quick_find/quick_find.c)
 1. [Quick Union](./lib/union_find/quick_union/quick_union.c)
-1. [Weighted Quick Union](./src/quick_union_weighted.c)
+1. [Weighted Quick Union](./lib/union_find/quick_union_weighted/quick_union_weighted.c)
 
 ### Ch. 2. Sorting
 

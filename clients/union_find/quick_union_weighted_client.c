@@ -4,14 +4,17 @@
 
 /**
  * ### Compile
- * `% mkdir build`
- * `% gcc src/quick_union_weighted_client.c src/quick_union_weighted.c -o build/quick_union_weighted_client.out`
+ * % cmake -S . -B build
+ * % make -C build
  *
  * ### Run
- * `% build/quick_union_weighted_client.out < tinyUF.txt`
+ * % ./build/bin/quick_union_weighted_client < tinyUF.txt
  *
  */
 int main() {
+  printf("** Quick Union (Weighted) **\n");
+  printf("\n");
+
   int n = 0, p, q;
   fscanf(stdin, "%d", &n);
 
@@ -35,7 +38,9 @@ int main() {
   RETURN_ON_ERR_VAL(QuickUnion_Count(uf, &count));
 
   printf("count(): %d\n", count);
+  printf("\n");
   RETURN_ON_ERR_VAL(QuickUnion_Clear(uf)); (uf = NULL);
+
 
   return 0;
 }

@@ -1,0 +1,3 @@
+add_library(quick_union_weighted SHARED quick_union_weighted.c)
+target_include_directories(quick_union_weighted PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
