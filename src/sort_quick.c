@@ -10,7 +10,7 @@
 #define CUT_OFF 5
 
 static void swap(void *arr, size_t width, int i, int j);
-static bool isSorted(void *arr, size_t width, int n, ComparatorFn cmp);
+static bool isSorted(void *arr, size_t width, size_t n, ComparatorFn cmp);
 
 int partition(
     void *arr,
@@ -84,7 +84,7 @@ static void swap(void *arr, size_t width, int i, int j) {
   memcpy(arr + j * width, temp, width);
 }
 
-static bool isSorted(void *arr, size_t width, int n, ComparatorFn cmp) {
+static bool isSorted(void *arr, size_t width, size_t n, ComparatorFn cmp) {
   for (size_t i = 1; i < n; i++) {
     if (cmp(arr + (i - 1) * width, arr + i * width) > 0) {
       return false;

@@ -26,8 +26,8 @@ double StdRandom_uniformDouble(double min, double max) {
 
 /** Fisher-Yates shuffle for the given array */
 void StdRandom_shuffle(void *arr, size_t width, size_t n) {
-  for (int i = 1; i < n; i++) {
-    int r = StdRandom_uniformInt(0, i);
+  for (size_t i = 1; i < n; i++) {
+    size_t r = StdRandom_uniformInt(0, i);
 
     if (i != r) {
       swap(arr, width, i, r);

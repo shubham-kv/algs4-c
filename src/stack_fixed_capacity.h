@@ -7,8 +7,8 @@
 typedef const void *Item;
 
 struct FixedCapacityStack {
-  uint32_t capacity;
-  uint32_t size;
+  size_t capacity;
+  size_t size;
   Item *items;
 };
 typedef struct FixedCapacityStack *Stack;
@@ -24,7 +24,7 @@ bool Stack_IsEmpty(Stack stack);
 
 struct FCStackIterator {
   Stack stack;
-  int i;
+  size_t i;
 };
 typedef struct FCStackIterator *StackIterator;
 
