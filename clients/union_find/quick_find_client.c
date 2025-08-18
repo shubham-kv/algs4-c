@@ -4,14 +4,17 @@
 
 /**
  * ### Compile
- * `% mkdir build`
- * `% gcc src/quick_find_client.c src/quick_find.c -o build/quick_find_client.out`
+ * % cmake -S . -B build
+ * % make -C build
  *
  * ### Run
- * `% build/quick_find_client.out < tinyUF.txt`
+ * % ./build/bin/stack_fixed_capacity_client < tinyUF.txt
  *
  */
 int main() {
+  printf("** Quick Find **\n");
+  printf("\n");
+
   int n = 0;
   fscanf(stdin, "%d", &n);
 
@@ -31,6 +34,8 @@ int main() {
 
   int count = QuickFind_Count(uf);
   printf("count(): %d\n", count);
+  printf("\n");
+
   QuickFind_Clear(uf);
 
   return 0;

@@ -1,0 +1,3 @@
+add_executable(quick_find_client quick_find_client.c)
+target_link_libraries(quick_find_client PRIVATE quick_find)
+
