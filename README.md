@@ -62,7 +62,7 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 #### 4.1 Undirected Graphs
 
 1. [Graph (Adjacency Lists)](./lib/graph/graph/graph.c)
-1. [Depth First Search](./src/graph_search_dfs.c)
+1. [Depth First Search](./lib/graph/graph_search_dfs/graph_search_dfs.c)
 
 ## Feedback / Contributions
 
