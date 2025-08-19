@@ -54,7 +54,7 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 
 #### 2.4 Priority Queues
 
-1. [Max PQ (Heap)](./src/pq_max_heap.c)
+1. [Max PQ (Heap)](./lib/priority_queue/pq_max_heap/pq_max_heap.c)
 1. [Heapsort](./lib/sorting/sort_heap/sort_heap.c)
 
 ### Ch. 4. Graphs

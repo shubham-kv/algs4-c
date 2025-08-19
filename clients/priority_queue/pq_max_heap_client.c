@@ -8,18 +8,13 @@ int intCmp(const void *a, const void *b);
 
 /**
  * ### Compile
- *
- * % mkdir build
- * % gcc -Wall -g src/pq_max_heap_client.c \
- *     src/pq_max_heap.c \
- *     src/stack_linked_list.c \
- *     -o build/pq_max_heap_client.out
+ * % cmake -S . -B build
+ * % make -C build
  *
  * ### Run
- *
- * % more input.txt
- *   10 20 35 100 85 67 35 18 22 21
- * % build/pq_max_heap_client.out 3 < input.txt
+ * % echo "10 20 35 100 85 67 35 18 22 21" > input.txt
+ * % ./build/bin/pq_max_heap_client 3 < input.txt
+ * 
  */
 int main(int argc, const char *argv[]) {
   if (!(argc == 2)) {
