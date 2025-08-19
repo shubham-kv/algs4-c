@@ -19,10 +19,8 @@ Test(
     .init = setup,
     .fini = teardown
 ) {
-  int v = 0, code;
-  code = Graph_Vertices(graph, &v);
+  int v = Graph_Vertices(graph);
   cr_assert(v == VERTICES, "Expected %d vertices got %d", VERTICES, v);
-  cr_assert(code == 0);
 }
 
 Test(
@@ -35,10 +33,8 @@ Test(
   Graph_AddEdge(graph, 0, 1), (expectedEdges++);
   Graph_AddEdge(graph, 1, 2), (expectedEdges++);
 
-  int edges = 0, code;
-  code = Graph_Edges(graph, &edges);
+  int edges = Graph_Edges(graph);
   cr_assert(edges == expectedEdges, "Expected %d edge(s) got %d", expectedEdges, edges);
-  cr_assert(code == 0);
 }
 
 Test(

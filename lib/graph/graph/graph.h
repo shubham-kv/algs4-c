@@ -15,10 +15,10 @@ Graph Graph_CreateFromFile(FILE *file);
 void Graph_Free(Graph *graph);
 
 /** Number of vertices in the graph */
-int Graph_Vertices(Graph graph, int *outVertices);
+int Graph_Vertices(Graph graph);
 
 /** Number of edges in the graph */
-int Graph_Edges(Graph graph, int *outEdges);
+int Graph_Edges(Graph graph);
 
 /** Add an edge v-w in this graph */
 void Graph_AddEdge(Graph graph, const int v, const int w);

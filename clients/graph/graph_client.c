@@ -21,18 +21,14 @@ int main() {
   fprintf(out, "\n");
 
   Graph graph = Graph_CreateFromFile(stdin);
-
   if (IS_NULL(graph)) {
     fprintf(stderr, "Error creating graph: %s\n", strerror(errno));
     return -1;
   }
 
-  int V = 0, E = 0, code = -1;
-  code = Graph_Vertices(graph, &V);
-  if (code != 0) { return code; }
-
-  code = Graph_Edges(graph, &E);
-  if (code != 0) { return code; }
+  int V, E;
+  V = Graph_Vertices(graph);
+  E = Graph_Edges(graph);
 
   fprintf(out, "%d vertices, %d edges\n", V, E);
 
@@ -40,17 +36,15 @@ int main() {
     fprintf(out, "%d:", vertex);
 
     AdjVertexIter iter = AdjVertexIter_Create(graph, vertex);
-
     if (IS_NULL(iter)) {
       fprintf(stderr, "Error creating iterator: %s\n", strerror(errno));
       return -1;
     }
 
     while (AdjVertexIter_HasNext(iter)) {
-      int adjacentVertex;
-
-      if (AdjVertexIter_GetNext(iter, &adjacentVertex) == 0) {
-        fprintf(out, " %d", adjacentVertex);
+      int w;
+      if (AdjVertexIter_GetNext(iter, &w) == 0) {
+        fprintf(out, " %d", w);
       }
     }
     fprintf(out, "\n");

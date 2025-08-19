@@ -67,20 +67,12 @@ void Graph_Free(Graph *graph) {
   free(*graph), (*graph = NULL);
 }
 
-inline int Graph_Vertices(Graph graph, int *outVertices) {
-  if (IS_NULL(graph)) { errno = EINVAL; return -1; }
-  if (IS_NULL(outVertices)) { errno = EINVAL; return -1; }
-
-  *outVertices = graph->vertices;
-  return 0;
+inline int Graph_Vertices(Graph graph) {
+  return graph->vertices;
 }
 
-inline int Graph_Edges(Graph graph, int *outEdges) {
-  if (IS_NULL(graph)) { errno = EINVAL; return -1; }
-  if (IS_NULL(outEdges)) { errno = EINVAL; return -1; }
-
-  *outEdges = graph->edges;
-  return 0;
+inline int Graph_Edges(Graph graph) {
+  return graph->edges;
 }
 
 void Graph_AddEdge(Graph graph, const int v, const int w) {

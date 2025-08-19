@@ -44,12 +44,8 @@ int main(int argc, const char *argv[]) {
     return -1;
   }
 
-  int vertices = 0, code;
-  code = Graph_Vertices(graph, &vertices);
-  if (code != 0) {
-    fprintf(stderr, "Error: %s\n", strerror(errno));
-    return -1;
-  }
+  int vertices;
+  vertices = Graph_Vertices(graph);
 
   if (!(0 <= sourceVertex && sourceVertex < vertices)) {
     fprintf(stderr, "Error: Invalid source vertex index %d\n", sourceVertex);

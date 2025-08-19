@@ -37,9 +37,7 @@ static void _dfsRecursive(DFS dfs, const int v) {
 DFS DFS_Create(Graph graph, const int s) {
   if (IS_NULL(graph)) { errno = EINVAL; return NULL; }
 
-  int code = -1, vertices = 0;
-  code = Graph_Vertices(graph, &vertices);
-  if (code != 0) { return NULL; }
+  const int vertices = Graph_Vertices(graph);
 
   if (!(0 <= s && s < vertices)) { errno = EINVAL; return NULL; }
 
