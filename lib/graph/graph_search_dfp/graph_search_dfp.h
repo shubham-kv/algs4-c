@@ -23,10 +23,15 @@ typedef struct DFPVertexIterator *DFPVertexIter;
 
 #define ITER DFPVertexIter
 
+/** Creates an iterator to iterate over all vertices in the path from source
+ * vertex `s` to given vertex `v`. */
 ITER DFPVertexIter_Create(DFP dfp, const int v);
-void DFPVertexIter_Free(ITER iterator);
+void DFPVertexIter_Free(ITER *iterator);
 bool DFPVertexIter_HasNext(ITER iterator);
- int DFPVertexIter_GetNext(ITER iterator);
+
+/** Sets `vertex` out parameter to the next vertex in the path if there is one
+ * and returns `0` otherwise sets `errno` and returns `-1`. */
+int DFPVertexIter_GetNext(ITER iterator, int *vertex);
 
 #undef ITER
 
