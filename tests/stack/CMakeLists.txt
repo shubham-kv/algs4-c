@@ -1,0 +1,3 @@
+add_criterion_test(test_stack_int test_stack_int.c)
+target_link_libraries(test_stack_int PRIVATE stack_int)
+
