@@ -1,0 +1,3 @@
+add_criterion_test(test_queue_int test_queue_int.c)
+target_link_libraries(test_queue_int PRIVATE queue_int)
+
