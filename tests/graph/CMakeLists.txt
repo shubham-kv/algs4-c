@@ -22,3 +22,10 @@ target_link_libraries(test_graph_search_bfs
     graph_search_bfs
 )
 
+add_criterion_test(test_graph_paths_bfp test_graph_paths_bfp.c)
+target_link_libraries(test_graph_paths_bfp
+  PRIVATE
+    graph
+    graph_paths_bfp
+)
+

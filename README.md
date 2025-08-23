@@ -65,6 +65,7 @@ Data Structures and Algorithms written in C from [Algorithms (4th Edition)](http
 1. [Depth First Search](./lib/graph/graph_search_dfs/graph_search_dfs.c)
 1. [Depth First Paths](./lib/graph/graph_search_dfp/graph_search_dfp.c)
 1. [Breadth First Search](./lib/graph/graph_search_bfs/graph_search_bfs.c)
+1. [Breadth First Paths](./lib/graph/graph_paths_bfp/graph_paths_bfp.c)
 
 ## Feedback / Contributions
 
