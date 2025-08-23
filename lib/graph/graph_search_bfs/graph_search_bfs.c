@@ -15,33 +15,33 @@ struct BreadthFirstSearch {
 #define IS_VERTEX_IN_RANGE(n, v) (0 <= v && v < n)
 
 
-static int _breadthFirstSearch(BFS bfs, const int v) {
+static int _breadthFirstSearch(BFS bfs, const int s) {
   if (IS_NULL(bfs)) { errno = EINVAL; return -1; }
-  if (!IS_VERTEX_IN_RANGE(bfs->verticesCount, v)) { errno = ERANGE; return -1; }
+  if (!IS_VERTEX_IN_RANGE(bfs->verticesCount, s)) { errno = ERANGE; return -1; }
 
   IntQueue queue = IntQueue_Create();
   if (IS_NULL(queue)) { return -1; }
 
-  IntQueue_Enqueue(queue, v);
+  IntQueue_Enqueue(queue, s);
 
   while (!IntQueue_IsEmpty(queue)) {
-    const int w = IntQueue_Dequeue(queue);
-    bfs->marked[w] = true;
+    const int v = IntQueue_Dequeue(queue);
+    bfs->marked[v] = true;
     bfs->count++;
 
-    AdjVertexIter vertexIterator = AdjVertexIter_Create(bfs->graph, w);
-    if (IS_NULL(vertexIterator)) { IntQueue_Free(&queue); return -1; }
+    AdjVertexIter adjacentVertexIterator = AdjVertexIter_Create(bfs->graph, v);
+    if (IS_NULL(adjacentVertexIterator)) { IntQueue_Free(&queue); return -1; }
 
-    while (AdjVertexIter_HasNext(vertexIterator)) {
-      int vertex;
-      if (AdjVertexIter_GetNext(vertexIterator, &vertex) == 0) {
-        if (!bfs->marked[vertex]) {
-          IntQueue_Enqueue(queue, vertex);
+    while (AdjVertexIter_HasNext(adjacentVertexIterator)) {
+      int w;
+      if (AdjVertexIter_GetNext(adjacentVertexIterator, &w) == 0) {
+        if (!bfs->marked[w]) {
+          IntQueue_Enqueue(queue, w);
         }
       }
     }
 
-    AdjVertexIter_Free(&vertexIterator);
+    AdjVertexIter_Free(&adjacentVertexIterator);
   }
 
   IntQueue_Free(&queue);
