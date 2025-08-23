@@ -15,3 +15,10 @@ target_link_libraries(test_graph_search_dfp
     graph_search_dfp
 )
 
+add_criterion_test(test_graph_search_bfs test_graph_search_bfs.c)
+target_link_libraries(test_graph_search_bfs
+  PRIVATE
+    graph
+    graph_search_bfs
+)
+
