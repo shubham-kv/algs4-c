@@ -17,3 +17,11 @@ target_link_libraries(graph_paths_client
     graph_paths_bfp
 )
 
+add_executable(graph_connected_components_client graph_connected_components_client.c)
+target_link_libraries(graph_connected_components_client
+  PRIVATE
+    graph
+    graph_connected_components
+    queue_int
+)
+

@@ -29,3 +29,10 @@ target_link_libraries(test_graph_paths_bfp
     graph_paths_bfp
 )
 
+add_criterion_test(test_graph_connected_components test_graph_connected_components.c)
+target_link_libraries(test_graph_connected_components
+  PRIVATE
+    graph
+    graph_connected_components
+)
+

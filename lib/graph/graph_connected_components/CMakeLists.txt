@@ -1,0 +1,4 @@
+add_library(graph_connected_components SHARED graph_connected_components.c)
+target_include_directories(graph_connected_components PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(graph_connected_components PRIVATE graph)
+
